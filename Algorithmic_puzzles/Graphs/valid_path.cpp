@@ -4,9 +4,10 @@ using namespace std;
 
 std::vector<pair<int,int>> dir = {{1,0}, {1,-1}, {0,-1}, {-1,-1}, {-1,0}, {-1,1}, {0,1}, {1,1}}; 
 
-bool dfs(int x, int y, int A, int B, bool ** traversable)
+
+
+bool dfs(int x, int y, int A, int B, vector<vector<bool>> &traversable)
 {
-	traversable = bool(*traversable)[B+1];
 	if(x == A && y == B) return true;
 
 	bool res = false;
@@ -28,8 +29,9 @@ bool dfs(int x, int y, int A, int B, bool ** traversable)
 
 std::string solve(int A, int B, int C, int D, std::vector<int> &E, std::vector<int> &F)
 {
-	bool traversable[A+1][B+1];
-	memset(traversable, true, sizeof(traversable));
+	// bool traversable[A+1][B+1];
+	vector<vector<bool>> traversable(A+1, vector<bool>(B+1, true));
+	// memset(traversable, true, sizeof(traversable));
 
 	for(int i = 0; i < C; ++i)
 	{
