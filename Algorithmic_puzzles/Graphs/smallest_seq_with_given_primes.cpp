@@ -24,6 +24,7 @@ std::vector<int> Solution::solve(int A, int B, int C, int D) {
 //number's factors are some multiple of A,B,C. Thus produce all combination of multiples.  
 //But, 3*k multiplication has to be done, because correct order can only be guaranteed if 
 //all multiples are inserted for them.
+//Complexity O(D)    
     while(count < D)
     {
         int smallest_ele = *numbers.begin();
