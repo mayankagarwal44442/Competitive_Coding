@@ -33,6 +33,10 @@ std::string solve(int A, int B, int C, int D, std::vector<int> &E, std::vector<i
 	vector<vector<bool>> traversable(A+1, vector<bool>(B+1, true));
 	// memset(traversable, true, sizeof(traversable));
 
+
+//For all the circles, find the grids which will come inside that circle and mark not traversable then do dfs
+//Complexity O(n*4*r_squared + (x*y))
+
 	for(int i = 0; i < C; ++i)
 	{
 		for(int j = std::max(0,E[i]-D); j <= std::min(A, E[i]+D); ++j)
